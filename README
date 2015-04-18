@@ -1,0 +1,34 @@
+This is intended to be two things:
+    First, and foremost, a pure Python implementation of Riot's
+        League of Legends API.  lolapi.py and loldata.py make up that infrastructure.  They are a set of
+        API wrappers + a multithreaded requester and a set of data container classes respectively.  The
+        API file implements a simple class for each api that uses the requests python module to get data.
+        Toward the bottom is a Requester class, which is a multithreaded wrapper around requests.  A
+        request is submitted to it, and assigned an ID.  When the request completes(data was returned
+        AND was written to the db file), the data is returned, along with the id.  It is up to the API
+        parent to sort that data.  From there, the data is organized and passed back to the USER application.
+    That brings us to the second, which is an idea I had around halfway through the spring split.  I want to
+        make a concerted effort to improve my play this year, without needing to spend too much time going
+        over my stats.  I have a problem where after a single good game on a champion(ranked or even in
+        normals) I will think I'm all of a sudden amazing on them.  At which point I get crushed in ranked
+        for no reason.  I want to analyze performance based on match history and rate myself(with no influence
+        from other players) to see who I typically perform the best on.  Eventually I'd like to take matchups
+        into account and possibly even suggest playstyles once I know the comps(i.e. sit back and farm more
+        or be aggressive etc etc).  My first pass at this is a very simple rating scheme which just rates
+        performance based on a position + role in a single match.  This is what you will see in my app right
+        now.  The future will include role based rankings of past champions which will update in real time
+        as matchups and team comps are entered.  The possibilities seem endless for what can be done here.
+
+Long story short, I think this could be an incredibly cool tool, but it is also incredibly ambitious.  My
+    entry in this contest is no where near a complete product, it's not very buggy, but there's a lot of
+    functionality that isn't there yet.  I will continue to develop this as I can and hopefully at the very
+    least be able to provide the community with a convenient Python3 LoL API module, and at most with a
+    virtual analyst!
+
+My name is Tom Manner, I'm a 26 year old verification engineer working for IBM.  I've been playing LoL for
+    4-5 years, and play with several of my coworkers here on a regular basis.  Regardless of the outcome
+    of this contest, I'd be more than happy to hear any feedback about my application and API, constructive
+    or otherwise!
+
+Cheers!
+Tom "UngodlySalmon" Manner
